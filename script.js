@@ -24,3 +24,12 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Show home by default
 document.getElementById('home').style.display = 'block';
+
+//Dark Mode
+
+const toggleButton = document.getElementById('dark-mode-toggle');
+const body = document.body;
+
+toggleButton.addEventListener('click', () => {
+	body.classList.toggle('dark-mode'); //adds/removes the class
+});
