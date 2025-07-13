@@ -10,6 +10,7 @@ function toggleComments(element) {
     }
 }
 
+
 // Basic navigation (client-side, no page reload)
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -25,11 +26,27 @@ document.querySelectorAll('nav a').forEach(link => {
 // Show home by default
 document.getElementById('home').style.display = 'block';
 
+
+
 //Dark Mode
 
 const toggleButton = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
+// Load saved mode after declaring body
+const savedMode = localStorage.getItem('darkMode');
+if (savedMode === 'enabled') {
+  body.classList.add('dark-mode');
+}
+
 toggleButton.addEventListener('click', () => {
 	body.classList.toggle('dark-mode'); //adds/removes the class
+	const isDark = body.classList.contains('dark-mode');
+	localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
 });
+
+
+
+
+
+
