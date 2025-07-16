@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-    text-align:  center;
+    text-align: center;
 }
 
 #today-container {
@@ -22,7 +22,6 @@ h1 {
 }
 
 .board {
-    {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
@@ -33,7 +32,7 @@ h1 {
     background: #ebecf0;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 200px 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .list h2 {
