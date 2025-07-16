@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadBoard() {
         const data = JSON.parse(localStorage.getItem('fsdev_board'));
-        if (data) {
+        if (!data) {
             // Initial milestones in To Do
             const milestones = [
                 'Month 1 Milestone: Resp repo D28',
@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
+    }
 
     loadBoard();
 
