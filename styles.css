@@ -54,9 +54,39 @@ li.card {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     cursor: move;
     word-break: break-word;
+    position: relative;
 }
 
-button {
+.card-text {
+    display: inline-block;
+    width: 85%;
+    vertical-align: middle;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0;
+    visibility: hidden;
+}
+
+.card:hover .delete-btn {
+    visibility: visible;
+    color: red;
+}
+
+.delete-btn:hover {
+    color: darkred;
+}
+
+button.add-card {
     width: 100%;
     padding: 8px;
     background-color: #5aac44;
@@ -67,6 +97,6 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+button.add-card:hover {
     background-color: #4e9a36;
 }
