@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = taskP.innerText;
         if (text && text !== 'Calculating...') {
             const li = createCard(text);
-            document.getElementById')('todo-list').appendChild(li);
+            document.getElementById('todo-list').appendChild(li);
             saveBoard();
         }
     });
