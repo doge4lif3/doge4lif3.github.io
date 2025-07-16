@@ -3,55 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doge4Lif3's Blog</title>
+    <title>FS Dev Trello Board</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Doge4Lif3's Blog</h1>
-        <p>Much wow, such thoughts on life, dogs, and memes!</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-		<button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
-    </nav>
-    <div class="container">
-        <section id="home">
-            <div class="blog-post">
-                <h2>First Post: Why Doge is the Best</h2>
-                <p class="date">Posted on July 11, 2025</p>
-                <p>Hello world! This is my first blog post. Doge memes are eternal. Here's why: much funny, very relatable.</p>
-                <div class="toggle-comments" onclick="toggleComments(this)">Show Comments</div>
-                <div class="comments">
-                    <p>Comment 1: Wow, such agree!</p>
-                    <p>Comment 2: More doge pls.</p>
-                </div>
-            </div>
-            <div class="blog-post">
-                <h2>Second Post: Life Lessons from Dogs</h2>
-                <p class="date">Posted on July 10, 2025</p>
-                <p>Dogs teach us to live in the moment. Fetch the day!</p>
-                <div class="toggle-comments" onclick="toggleComments(this)">Show Comments</div>
-                <div class="comments">
-                    <p>Comment 1: Bark bark!</p>
-                </div>
-            </div>
-        </section>
-        <section id="about" style="display:none;">
-            <h2>About Me</h2>
-            <p>I'm doge4lif3, a animal lover and meme enthusiast.</p>
-        </section>
-        <section id="contact" style="display:none;">
-            <h2>Contact</h2>
-            <p>Reach me on X.com @dogecoin4lif3</p>
-        </section>
+    <h1>FS Dev Journey Trello Tracker</h1>
+    <div id="today-container">
+        <h2>Today's Task</h2>
+        <p id="today-task">Calculating...</p>
+        <button id="add-today">Add Today's Task to To Do</button>
     </div>
-    <footer>
-        © 2025 Doge4Lif3. All rights reserved.
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="board">
+        <div class="list" id="todo">
+            <h2>To Do</h2>
+            <ul id="todo-list"></ul>
+            <button class="add-card">Add Card</button>
+        </div>
+        <div class="list" id="inprogress">
+            <h2>In Progress</h2>
+            <ul id="inprogress-list"></ul>
+            <button class="add-card">Add Card</button>
+        </div>
+        <div class="list" id="done">
+            <h2>Done</h2>
+            <ul id="done-list"></ul>
+            <button class="add-card">Add Card</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
