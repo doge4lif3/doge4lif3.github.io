@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case 1: return 'Fund (HTML/CSS/JS/Git) - 15m tut +20-30m code +5m break.';
             case 2: return 'FE (React) - 10-15m tut +15-20m code +5m CTF.';
             case 3: return 'BE (Node/Exp) - 10m vid +20-30m code +5m break.';
-            case 4: return 'DB (Mongo) - 10m tut +20-30m code +5m reward.';
+            case 4: return 'DB (Mongo) - 10m tut +20-30m code +5m rew.';
             case 5: return 'Block/Hack (Sol) - 15m learn +20-30m code/test +5m THM.';
             case 6: return 'Dep/Port - 10-15m learn +20-30m dep +5m X share.';
             default: return '';
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 3: return 'Sec (JWT).';
                 case 4: return 'Int.';
                 case 5: return 'Ethers+tests.';
-                case 6: 'Port/job.';
+                case 6: return 'Port/job.';
             }
         }
         return '';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             testStr += isFriday ? '—test due today.' : '—no today.';
         } else {
             testStr = 'biwk (D8,22/mo)';
-            testStr += (localDay === 8 || localDay === 22) ? '—test due today.' : '—no today';
+            testStr += (localDay === 8 || localDay === 22) ? '—test due today.' : '—no today.';
         }
         return testStr;
     }
@@ -133,15 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadBoard() {
         const data = JSON.parse(localStorage.getItem('fsdev_board'));
         if (data) {
-            for (const listId in data) {
-                const ul = document.getElementById(`${listId}-list`);
-                ul.innerHTML = '';
-                data[listId].forEach((text) => {
-                    const li = createCard(text);
-                    ul.appendChild(li);
-                });
-            }
-        } else {
             // Initial milestones in To Do
             const milestones = [
                 'Month 1 Milestone: Resp repo D28',
@@ -157,16 +148,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 todoUl.appendChild(li);
             });
             saveBoard();
+        } else {
+            for (const listId in data) {
+                const ul = document.getElementById(`${listId}-list`);
+                ul.innerHTML = '';
+                data[listId].forEach((text) => {
+                    const li = createCard(text);
+                    ul.appendChild(li);
+                });
+            }
         }
-    }
 
     loadBoard();
 
     // Drag and Drop events
     const uls = document.querySelectorAll('.list ul');
     uls.forEach((ul) => {
-        ul.addEventListener('dragover', (e) => e.preventDefault();
-        });
+        ul.addEventListener('dragover', (e) => e.preventDefault());
         ul.addEventListener('drop', (e) => {
             e.preventDefault();
             const id = e.dataTransfer.getData('text/plain');
@@ -196,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = taskP.innerText;
         if (text && text !== 'Calculating...') {
             const li = createCard(text);
-            document.getElementById('todo-list').appendChild(li);
+            document.getElementById')('todo-list').appendChild(li);
             saveBoard();
         }
     });
