@@ -112,12 +112,36 @@ document.addEventListener('DOMContentLoaded', () => {
     function createCard(text) {
         const li = document.createElement('li');
         li.className = 'card';
-        li.innerText = text;
+        li.id = 'card-' + Date.now(); // Set unique ID immediately
         li.draggable = true;
+
+        const textSpan = document.createElement('span');
+        textSpan.className = 'card-text';
+        textSpan.innerText = text;
+        li.appendChild(textSpan);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.innerText = 'x';
+        deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent drag or other events
+            li.remove();
+            saveBoard();
+        });
+        li.appendChild(deleteBtn);
+
         li.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', li.id);
-            li.id = 'card-' + Date.now(); // Unique ID for drag
         });
+
+        li.addEventListener('dblclick', () => {
+            const newText = prompt('Edit card:', textSpan.innerText);
+            if (newText !== null) {
+                textSpan.innerText = newText;
+                saveBoard();
+            }
+        });
+
         return li;
     }
 
@@ -125,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = {};
         document.querySelectorAll('.list ul').forEach((ul) => {
             const listId = ul.parentElement.id;
-            data[listId] = Array.from(ul.children).map((li) => li.innerText);
+            data[listId] = Array.from(ul.children).map((li) => li.querySelector('.card-text').innerText);
         });
         localStorage.setItem('fsdev_board', JSON.stringify(data));
     }
