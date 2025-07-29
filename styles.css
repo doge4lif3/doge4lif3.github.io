@@ -1,102 +1,102 @@
 body {
-    background-color: #fafafa;
-    font-family: Arial, sans-serif;
-    margin: 20px;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 #today-container {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #f0f8ff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #today-task {
-    font-size: 1.1em;
-    white-space: pre-wrap;
+  font-size: 1.1em;
+  white-space: pre-wrap;
 }
 
 .board {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .list {
-    width: 300px;
-    background: #ebecf0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 300px;
+  background: #ebecf0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .list h2 {
-    margin: 0 0 10px 0;
-    font-size: 1.2em;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    min-height: 100px;
+  list-style: none;
+  padding: 0;
+  min-height: 100px;
 }
 
 li.card {
-    background: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    cursor: move;
-    word-break: break-word;
-    position: relative;
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  word-break: break-word;
+  position: relative;
 }
 
 .card-text {
-    display: inline-block;
-    width: 85%;
-    vertical-align: middle;
+  display: inline-block;
+  width: 85%;
+  vertical-align: middle;
 }
 
 .delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    color: #ccc;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 0;
-    visibility: hidden;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0;
+  visibility: hidden;
 }
 
 .card:hover .delete-btn {
-    visibility: visible;
-    color: red;
+  visibility: visible;
+  color: red;
 }
 
 .delete-btn:hover {
-    color: darkred;
+  color: darkred;
 }
 
 button.add-card {
-    width: 100%;
-    padding: 8px;
-    background-color: #5aac44;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+  width: 100%;
+  padding: 8px;
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 button.add-card:hover {
-    background-color: #4e9a36;
+  background-color: #4e9a36;
 }
