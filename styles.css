@@ -32,6 +32,11 @@ header h1 {
   border-radius: 5px;
   color: var(--text-color);
 }
+#doge-price {
+  font-weight: bold;
+  color: var(--text-color);
+  margin-top: 20px;
+}
 nav {
   background-color: #333;
   color: white;
