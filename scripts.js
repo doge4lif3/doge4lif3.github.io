@@ -56,8 +56,12 @@ function updateDogePrice() {
     })
     .then((data) => {
       const price = data.dogecoin.usd;
+      document.getElementById(
+        "last-updated"
+      ).textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+      console.log(price.toFixed(4)); // Log price to console
       document.getElementById("doge-price").textContent = price
-        ? `Dogecoin Price: $${price.toFixed(2)}`
+        ? `Dogecoin Price: $${price.toFixed(4)}`
         : `Dogecoin Price: Not available`;
     })
     .catch((error) => {
@@ -68,6 +72,6 @@ function updateDogePrice() {
     });
 }
 
-updateDogePrice(); // innitiial fetch
+updateDogePrice(); // innitiial fetch of dogecoin price from coingecko API
 
-setInterval(updateDogePrice, 5000); // Update every 5 seconds
+setInterval(updateDogePrice, 30000); // Update every 30 seconds
