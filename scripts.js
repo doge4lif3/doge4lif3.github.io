@@ -41,3 +41,33 @@ toggleButton.addEventListener("click", () => {
   localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
   toggleButton.innerHTML = isDark ? "☀" : "🌙"; // Switch icon
 });
+
+// Fetch Dogecoin price from CoinGecko API
+function updateDogePrice() {
+  const apiUrl =
+    "https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd";
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("API request failed");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const price = data.dogecoin.usd;
+      document.getElementById("doge-price").textContent = price
+        ? `Dogecoin Price: $${price.toFixed(2)}`
+        : `Dogecoin Price: Not available`;
+    })
+    .catch((error) => {
+      console.error("Error fetching price:", error);
+      document.getElementById(
+        "doge-price"
+      ).textContent = `Dogecoin Price: Error loading`;
+    });
+}
+
+updateDogePrice(); // innitiial fetch
+
+setInterval(updateDogePrice, 5000); // Update every 5 seconds
