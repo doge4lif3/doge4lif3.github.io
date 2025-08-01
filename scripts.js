@@ -72,6 +72,36 @@ function updateDogePrice() {
     });
 }
 
+// Fetch random Dogecoin meme from an API
+const memeButton = document.getElementById("random-meme-btn");
+const memeTitle = document.getElementById("meme-title");
+const memeImage = document.getElementById("meme-image");
+
+function getRandomMeme() {
+  const apiUrl = "https://meme-api.com/gimme/dogecoin";
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("API request failed");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      memeTitle.textContent = data.title || "Untitled Doge Meme";
+      memeImage.src = data.url;
+      memeImage.style.display = "block"; // Show the image
+    })
+    .catch((error) => {
+      console.error("Error fetching meme:", error);
+      memeTitle.textContent = "Error loading meme—try again!";
+      memeImage.style.display = "none";
+    });
+}
+
+// Add event listener to the meme button
+memeButton.addEventListener("click", getRandomMeme);
+
 updateDogePrice(); // innitiial fetch of dogecoin price from coingecko API
 
 setInterval(updateDogePrice, 30000); // Update every 30 seconds

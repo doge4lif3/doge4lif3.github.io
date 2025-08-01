@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Welcome to Doge4Lif3's Blog</h1>
-      <p>Much wow, such thoughts on life, dogs, and memes!</p>
+      <p>Much wow, such thoughts on life, doges, and memes!</p>
       <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
     <nav>
@@ -18,16 +18,32 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <h3>Dogecoin (DOGE) Price</h3>
-    <div id="doge-price">Loading...</div>
-    <div id="last-updated">Last updated: --</div>
+    <div class="container">
+      <section id="doge-features">
+        <h3>Dogecoin (DOGE) Features</h3>
+        <div class="feature-section">
+          <div class="doge-price">
+            <h4>Dogecoin (DOGE) Price</h4>
+            <div id="doge-price">Loading...</div>
+            <div id="last-updated">Last updated: --</div>
+          </div>
+          <div class="doge-meme">
+            <button id="random-meme-btn">Get Random Doge Meme</button>
+            <div id="meme-container">
+              <p id="meme-title">Click the button for a meme!</p>
+              <img id="meme-image" src="" alt="Random Doge Meme" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <div class="container">
       <section id="home">
         <div class="blog-post">
           <h2>FSD Jorney</h2>
           <p class="date">Posted on July 29, 2025</p>
-          <p>Full Stack Developer Journey: From Zero to Hero in 180 Days</p>
+          <p>Full Stack Developer Journey: From Zero to Doge in 180 Days</p>
           <div class="toggle-comments" onclick="toggleComments(this)">
             Show Comments
           </div>
