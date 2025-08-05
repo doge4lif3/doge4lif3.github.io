@@ -12,31 +12,19 @@
       <p>Much wow, such thoughts on life, doges, and memes!</p>
       <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
+
+    <div class="doge-price">
+      <h4>Dogecoin (DOGE) Price</h4>
+      <div id="doge-price">Loading...</div>
+      <div id="last-updated">Last updated: --</div>
+    </div>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#doge-meme">Doge Features</a>
     </nav>
-
-    <div class="container">
-      <section id="doge-features">
-        <h3>Dogecoin (DOGE) Features</h3>
-        <div class="feature-section">
-          <div class="doge-price">
-            <h4>Dogecoin (DOGE) Price</h4>
-            <div id="doge-price">Loading...</div>
-            <div id="last-updated">Last updated: --</div>
-          </div>
-          <div class="doge-meme">
-            <button id="random-meme-btn">Get Random Doge Meme</button>
-            <div id="meme-container">
-              <p id="meme-title">Click the button for a meme!</p>
-              <img id="meme-image" src="" alt="Random Doge Meme" />
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
 
     <div class="container">
       <section id="home">
@@ -71,6 +59,17 @@
       <section id="contact" style="display: none">
         <h2>Contact</h2>
         <p>Reach me at dogecoin4lif3 on X.</p>
+      </section>
+      <!-- Dogecoin Features Section -->
+      <!-- TODO: improve the interface, sometimes the meme images are cut -->
+      <section id="doge-meme" style="display: none">
+        <div class="doge-meme">
+          <button id="random-meme-btn">Get Random Doge Meme</button>
+          <div id="meme-container">
+            <p id="meme-title">Click the button for a meme!</p>
+            <img id="meme-image" src="" alt="Random Doge Meme" />
+          </div>
+        </div>
       </section>
     </div>
     <footer>© 2025 Doge4Lif3. All rights reserved.</footer>
