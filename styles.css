@@ -131,8 +131,6 @@ footer {
   min-width: 0; /* Prevents overflow */
   padding: 15px;
   text-align: center;
-  width: 300px;
-  height: 400px;
   overflow: hidden;
   position: relative;
 }
