@@ -99,6 +99,70 @@ function getRandomMeme() {
     });
 }
 
+// To-Do List functionality
+class Task {
+  constructor(description) {
+    this.description = description;
+    this.completed = false;
+  }
+
+  toggleComplete() {
+    this.completed = !this.completed;
+  }
+
+  getDescription() {
+    return this.description;
+  }
+
+  isCompleted() {
+    return this.completed;
+  }
+}
+
+class ToDoList {
+  constructor() {
+    this.tasks = [];
+    this.taskListElement = document.getElementById("taskList");
+  }
+
+  addTask() {
+    const input = document.getElementById("taskInput");
+    const description = input.value.trim();
+    if (description) {
+      const task = new Task(description);
+      this.tasks.push(task);
+      input.value = "";
+      this.render();
+    }
+  }
+
+  deleteTask(index) {
+    this.tasks.splice(index, 1);
+    this.render();
+  }
+
+  toggleTask(index) {
+    this.tasks[index].toggleComplete();
+    this.render();
+  }
+
+  render() {
+    this.taskListElement.innerHTML = "";
+    this.tasks.forEach((task, index) => {
+      const li = document.createElement("li");
+      li.className = task.isCompleted() ? "completed" : "";
+      li.innerHTML = `
+                        ${task.getDescription()}
+                        <button onclick="todoList.toggleTask(${index})">Toggle</button>
+                        <button onclick="todoList.deleteTask(${index})">Delete</button>
+                    `;
+      this.taskListElement.appendChild(li);
+    });
+  }
+}
+
+const todoList = new ToDoList();
+
 // Add event listener to the meme button
 memeButton.addEventListener("click", getRandomMeme);
 
