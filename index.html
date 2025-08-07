@@ -33,6 +33,7 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="#dogeMemePage">Random Doge Meme</a>
+      <a href="#toDo">To-Do List</a>
     </nav>
 
     <div class="container">
@@ -70,8 +71,6 @@
         <p>Reach me at dogecoin4lif3 on X.</p>
       </section>
 
-      <!-- T0D0 - adjust the style to fit better -->
-
       <section id="dogeMemePage" style="display: none">
         <div class="doge-meme">
           <button id="random-meme-btn">Get Random Doge Meme</button>
@@ -81,6 +80,12 @@
           </div>
         </div>
       </section>
+
+      <section id="toDo" style="display: none">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="todoList.addTask()">Add Task</button>
+        <ul id="taskList"></ul>
     </div>
     <footer>© 2025 Doge4Lif3. All rights reserved.</footer>
 
