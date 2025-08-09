@@ -4,6 +4,7 @@
   --text-color: #333; /* Dark text */
   --header-bg: #ffcc00; /* Your doge yellow */
   --post-bg: white; /* Blog post background */
+  --commets-bg: #eee; /* Light mode defaults */
 }
 
 body {
@@ -107,7 +108,7 @@ footer {
   display: none;
   margin-top: 10px;
   padding: 10px;
-  background: #eee;
+  background: var(--comments-bg);
 }
 
 /* Feature Section Layout */
@@ -214,4 +215,5 @@ footer {
   --text-color: #e0e0e0; /* Light text */
   --header-bg: #b38600; /* Darker yellow for header */
   --post-bg: #1e1e1e; /* Dark post background */
+  --comments-bg: #2a2a2a; /* Dark comments background */
 }
