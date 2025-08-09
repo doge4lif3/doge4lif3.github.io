@@ -121,9 +121,12 @@ class Task {
 
 class ToDoList {
   constructor() {
-    this.tasks = [];
-    this.taskListElement = document.getElementById("taskList");
-  }
+    this.tasks = JSON.parse(localStorage.getItem('tasks'))?.map(
+        task => Object.assign(new Task(task.description), task)
+    ) || [];
+    this.taskListElement = document.getElementById('taskList');
+    this.render();
+}
 
   addTask() {
     const input = document.getElementById("taskInput");
@@ -132,19 +135,26 @@ class ToDoList {
       const task = new Task(description);
       this.tasks.push(task);
       input.value = "";
+      this.saveTasks();  // Add this line to save after the change
       this.render();
     }
   }
 
   deleteTask(index) {
     this.tasks.splice(index, 1);
+    this.saveTasks();  // Add this line to save after the change
     this.render();
   }
 
   toggleTask(index) {
     this.tasks[index].toggleComplete();
+    this.saveTasks();  // Add this line to save after the change
     this.render();
   }
+
+  saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+}
 
   render() {
     this.taskListElement.innerHTML = "";
