@@ -125,6 +125,9 @@ class ToDoList {
         task => Object.assign(new Task(task.description), task)
     ) || [];
     this.taskListElement = document.getElementById('taskList');
+
+    console.log("ToDoList initialized with tasks:", this.tasks);
+
     this.render();
 }
 
@@ -135,20 +138,22 @@ class ToDoList {
       const task = new Task(description);
       this.tasks.push(task);
       input.value = "";
-      this.saveTasks();  // Add this line to save after the change
+      this.saveTasks();  
       this.render();
     }
   }
 
   deleteTask(index) {
     this.tasks.splice(index, 1);
-    this.saveTasks();  // Add this line to save after the change
+    this.saveTasks();  
     this.render();
   }
+  
+  // Todo: need to add method to toggle task completion visually
 
   toggleTask(index) {
     this.tasks[index].toggleComplete();
-    this.saveTasks();  // Add this line to save after the change
+    this.saveTasks();  
     this.render();
   }
 
