@@ -78,7 +78,7 @@ const memeTitle = document.getElementById("meme-title");
 const memeImage = document.getElementById("meme-image");
 
 function getRandomMeme() {
-  const apiUrl = "https://meme-api.com/gimme/dogecoin";
+  const apiUrl = "https://meme-api.com/gimme/doge";
 
   fetch(apiUrl)
     .then((response) => {
