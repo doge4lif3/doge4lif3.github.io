@@ -184,3 +184,5 @@ memeButton.addEventListener("click", getRandomMeme);
 updateDogePrice(); // innitiial fetch of dogecoin price from coingecko API
 
 setInterval(updateDogePrice, 30000); // Update every 30 seconds
+
+
